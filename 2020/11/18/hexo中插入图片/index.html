@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <title>
+        hexo中插入图片 |
+        
+        BigCat的Blog
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <link rel="shortcut icon" href="/images/favicon.png">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <script id="hexo-configurations">
+    let ILS = window.ILS || {};
+    let CONFIG = {"hostname":"blog.notjxh.cn","root":"/","localsearch":{"enable":false,"trigger":"auto","unescape":false,"preload":false},"toc":{"enable":false,"number":true,"expand_all":true},"back2top":{"enable":true}};
+  </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+<div class="page-container">
+
+    <header class="page-header">
+        <div class="header-progress"></div>
+    </header>
+
+    <main class="page-main">
+
+        <div class="page-main-content">
+
+            <div class="page-main-content-top">
+                <header class="header-wrapper">
+
+    <div class="header-content">
+
+        <a class="logo-title" href="/">
+            BigCat的Blog
+        </a>
+
+        <ul class="menu-list">
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/"
+                    >
+                        HOME
+                    </a>
+                </li>
+            
+                <li class="menu-item">
+                    <a class=""
+                       href="/archives"
+                    >
+                        ARCHIVES
+                    </a>
+                </li>
+            
+        </ul>
+
+        <div class="menu-bar">
+            <div class="menu-bar-middle"></div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+            </div>
+
+            <div class="page-main-content-middle">
+
+                <main class="main-content normal-code-theme">
+
+                    
+                        <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">hexo中插入图片</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span>BigCat</span>
+                        <span class="level">Lv1</span>
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa fa-calendar-o"></i> 2020-11-18 15:36:21
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa fa-tags"></i>
+            <ul>
+                
+                    <li>
+                        <a href="/tags/hexo%E4%BD%BF%E7%94%A8/">hexo使用</a>
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p><img src="/2020/11/18/hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/1.jpg" alt="1.jpg"></p>
+<h4 id="修改配置-config-yml"><a href="#修改配置-config-yml" class="headerlink" title="修改配置 _config.yml"></a>修改配置 _config.yml</h4><blockquote>
+<p>post_asset_folder: true</p>
+</blockquote>
+<h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><blockquote>
+<p>npm install hexo-asset-image –save</p>
+</blockquote>
+<h4 id="修改插件"><a href="#修改插件" class="headerlink" title="修改插件"></a>修改插件</h4><p>找到如下文件，先备份</p>
+<blockquote>
+<p>/node_modules/hexo-asset-image/index.js</p>
+</blockquote>
+<p>然后改为以下内容，如果不修改，图片显示不正确  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&#x27;use strict&#x27;;</span><br><span class="line">var cheerio = require(&#x27;cheerio&#x27;);</span><br><span class="line"></span><br><span class="line">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span><br><span class="line">function getPosition(str, m, i) &#123;</span><br><span class="line">  return str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var version = String(hexo.version).split(&#x27;.&#x27;);</span><br><span class="line">hexo.extend.filter.register(&#x27;after_post_render&#x27;, function(data)&#123;</span><br><span class="line">  var config = hexo.config;</span><br><span class="line">  if(config.post_asset_folder)&#123;</span><br><span class="line">        var link = data.permalink;</span><br><span class="line">    if(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)</span><br><span class="line">       var beginPos = getPosition(link, &#x27;/&#x27;, 1) + 1;</span><br><span class="line">    else</span><br><span class="line">       var beginPos = getPosition(link, &#x27;/&#x27;, 3) + 1;</span><br><span class="line">    // In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.</span><br><span class="line">    var endPos = link.lastIndexOf(&#x27;/&#x27;) + 1;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    var toprocess = [&#x27;excerpt&#x27;, &#x27;more&#x27;, &#x27;content&#x27;];</span><br><span class="line">    for(var i = 0; i <span class="tag">&lt; <span class="attr">toprocess.length</span>; <span class="attr">i</span>++)&#123;</span></span><br><span class="line"><span class="tag">      <span class="attr">var</span> <span class="attr">key</span> = <span class="string">toprocess[i];</span></span></span><br><span class="line"><span class="tag"> </span></span><br><span class="line"><span class="tag">      <span class="attr">var</span> $ = <span class="string">cheerio.load(data[key],</span> &#123;</span></span><br><span class="line"><span class="tag">        <span class="attr">ignoreWhitespace:</span> <span class="attr">false</span>,</span></span><br><span class="line"><span class="tag">        <span class="attr">xmlMode:</span> <span class="attr">false</span>,</span></span><br><span class="line"><span class="tag">        <span class="attr">lowerCaseTags:</span> <span class="attr">false</span>,</span></span><br><span class="line"><span class="tag">        <span class="attr">decodeEntities:</span> <span class="attr">false</span></span></span><br><span class="line"><span class="tag">      &#125;);</span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">      $(&#x27;<span class="attr">img</span>&#x27;)<span class="attr">.each</span>(<span class="attr">function</span>()&#123;</span></span><br><span class="line"><span class="tag">        <span class="attr">if</span> ($(<span class="attr">this</span>)<span class="attr">.attr</span>(&#x27;<span class="attr">src</span>&#x27;))&#123;</span></span><br><span class="line"><span class="tag">            // <span class="attr">For</span> <span class="attr">windows</span> <span class="attr">style</span> <span class="attr">path</span>, <span class="attr">we</span> <span class="attr">replace</span> &#x27;\&#x27; <span class="attr">to</span> &#x27;/&#x27;<span class="attr">.</span></span></span><br><span class="line"><span class="tag">            <span class="attr">var</span> <span class="attr">src</span> = <span class="string">$(this).attr(</span>&#x27;<span class="attr">src</span>&#x27;)<span class="attr">.replace</span>(&#x27;\\&#x27;, &#x27;/&#x27;);</span></span><br><span class="line"><span class="tag">            <span class="attr">if</span>(!/<span class="attr">http</span>[<span class="attr">s</span>]*<span class="attr">.</span>*|\/\/<span class="attr">.</span>*/<span class="attr">.test</span>(<span class="attr">src</span>) &amp;&amp;</span></span><br><span class="line"><span class="tag">               !/^\<span class="attr">s</span>*\//<span class="attr">.test</span>(<span class="attr">src</span>)) &#123;</span></span><br><span class="line"><span class="tag">              // <span class="attr">For</span> &quot;<span class="attr">about</span>&quot; <span class="attr">page</span>, <span class="attr">the</span> <span class="attr">first</span> <span class="attr">part</span> <span class="attr">of</span> &quot;<span class="attr">src</span>&quot; <span class="attr">can</span>&#x27;<span class="attr">t</span> <span class="attr">be</span> <span class="attr">removed.</span></span></span><br><span class="line"><span class="tag">              // <span class="attr">In</span> <span class="attr">addition</span>, <span class="attr">to</span> <span class="attr">support</span> <span class="attr">multi-level</span> <span class="attr">local</span> <span class="attr">directory.</span></span></span><br><span class="line"><span class="tag">              <span class="attr">var</span> <span class="attr">linkArray</span> = <span class="string">link.split(</span>&#x27;/&#x27;)<span class="attr">.filter</span>(<span class="attr">function</span>(<span class="attr">elem</span>)&#123;</span></span><br><span class="line"><span class="tag">                <span class="attr">return</span> <span class="attr">elem</span> != <span class="string">&#x27;&#x27;</span>;</span></span><br><span class="line"><span class="tag">              &#125;);</span></span><br><span class="line"><span class="tag">              <span class="attr">var</span> <span class="attr">srcArray</span> = <span class="string">src.split(</span>&#x27;/&#x27;)<span class="attr">.filter</span>(<span class="attr">function</span>(<span class="attr">elem</span>)&#123;</span></span><br><span class="line"><span class="tag">                <span class="attr">return</span> <span class="attr">elem</span> != <span class="string">&#x27;&#x27;</span> &amp;&amp; <span class="attr">elem</span> != <span class="string">&#x27;.&#x27;</span>;</span></span><br><span class="line"><span class="tag">              &#125;);</span></span><br><span class="line"><span class="tag">              <span class="attr">if</span>(<span class="attr">srcArray.length</span> &gt;</span> 1)</span><br><span class="line">                srcArray.shift();</span><br><span class="line">              src = srcArray.join(&#x27;/&#x27;);</span><br><span class="line">              $(this).attr(&#x27;src&#x27;, config.root + link + src);</span><br><span class="line">              console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);</span><br><span class="line">            console.info&amp;&amp;console.info($(this));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      data[key] = $.html();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><blockquote>
+<p>hexo new post hexo中插入图片</p>
+</blockquote>
+<p>生成一个hexo中插入图片.md和同名文件夹，将1.jpg放在同名文件夹中，在文章中按以下方式引用</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">1.jpg</span>](<span class="link">1.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>参考 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f72aaad7b852">https://www.jianshu.com/p/f72aaad7b852</a></p>
+
+        </div>
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next btn"
+                           rel="next"
+                           href="/2020/11/16/%E6%90%AD%E5%BB%BAblog/"
+                        >
+                            <span class="post-nav-title-item">搭建blog</span>
+                            <span class="post-nav-item">Next posts</span>
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                    
+                </main>
+
+            </div>
+
+            <div class="page-main-content-bottom">
+                <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy; 2020 <i class="fa fa-heart-o"></i> <a href="/">BigCat</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a> | Theme <a class="theme-version" target="_blank"></a>
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="sidebar-tools">
+        <div class="tools-container">
+    <ul class="tools-list">
+        
+
+        
+
+        <!-- TOC aside toggle -->
+        
+
+    </ul>
+</div>
+
+    </div>
+
+    <div class="sidebar-tools-2">
+        <div class="tools2-container">
+
+    <button class="tools-button">
+        <i class="fa fa-plus"></i>
+    </button>
+
+    <ul class="tools-wrapper">
+        <!-- back2top -->
+        
+            <li class="tools-item scroll-to-bottom">
+                <i class="fa fa-arrow-down"></i>
+            </li>
+            <li class="tools-item scroll-to-top">
+                <i class="fa fa-arrow-up"></i>
+            </li>
+        
+
+        <!-- mode toggle -->
+        <li class="tools-item mode-toggle">
+            <i class="fa fa-moon-o"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+
+    </ul>
+</div>
+
+    </div>
+
+
+    <!-- page aside -->
+    <aside class="page-aside">
+        
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE-config-yml"><span class="nav-number">1.</span> <span class="nav-text">修改配置 _config.yml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%8F%92%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">修改插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li></ol>
+    </div>
+</div>
+        
+    </aside>
+
+</div>
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/header-shrink.js"></script>
+<script src="/js/dark-light-toggle.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+    
+<script src="/js/back2top.js"></script>
+
+
+
+
+
+    
+<script src="/js/left-side-toggle.js"></script>
+
+
+    
+        
+<script src="/js/code-copy.js"></script>
+
+    
+
+    
+
+
+</body>
+</html>
