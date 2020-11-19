@@ -110,12 +110,11 @@
                 <div class="info">
                     <div class="author">
                         <span>BigCat</span>
-                        <span class="level">Lv1</span>
                     </div>
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fa fa-calendar-o"></i> 2020-11-16 16:34:20
+        <i class="fa fa-calendar-o"></i> 2020-11-18 18:34:20
     </span>
     
     
@@ -141,34 +140,34 @@
         
 
         <div class="article-content markdown-body">
-            <p>内容来自<a target="_blank" rel="noopener" href="https://easyhexo.com/1-Hexo-install-and-config/">easy hexo官网</a>,本文只记录主要流程</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><blockquote>
+            <p>内容来自<a target="_blank" rel="noopener" href="https://easyhexo.com/1-Hexo-install-and-config/">easy hexo官网</a>，本文只记录主要流程</p>
+<hr>
+<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1 环境准备"></a>1 环境准备</h2><h3 id="1-1-安装git"><a href="#1-1-安装git" class="headerlink" title="1.1 安装git"></a>1.1 安装git</h3><h3 id="1-2-安装Node-js"><a href="#1-2-安装Node-js" class="headerlink" title="1.2 安装Node.js"></a>1.2 安装Node.js</h3><h3 id="1-3-安装Hexo"><a href="#1-3-安装Hexo" class="headerlink" title="1.3 安装Hexo"></a>1.3 安装Hexo</h3><blockquote>
 <p>npm install -g hexo-cli</p>
 </blockquote>
-<h2 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h2><p>创建博客文件夹hexo-blog并安装hexo</p>
-<blockquote>
+<h2 id="2-本地测试"><a href="#2-本地测试" class="headerlink" title="2 本地测试"></a>2 本地测试</h2><h3 id="2-1-创建博客文件夹hexo-blog并安装hexo"><a href="#2-1-创建博客文件夹hexo-blog并安装hexo" class="headerlink" title="2.1 创建博客文件夹hexo-blog并安装hexo"></a>2.1 创建博客文件夹hexo-blog并安装hexo</h3><blockquote>
 <p>mkdir hexo-blog<br>hexo init hexo-blog</p>
 </blockquote>
-<p>本地预览</p>
-<blockquote>
+<h3 id="2-2-本地预览"><a href="#2-2-本地预览" class="headerlink" title="2.2 本地预览"></a>2.2 本地预览</h3><blockquote>
 <p>hexo s</p>
 </blockquote>
-<p>访问localhost:4000</p>
-<p>新建文章</p>
-<blockquote>
+<h3 id="2-3-访问"><a href="#2-3-访问" class="headerlink" title="2.3 访问"></a>2.3 访问</h3><blockquote>
+<p>localhost:4000</p>
+</blockquote>
+<h3 id="2-4-新建文章"><a href="#2-4-新建文章" class="headerlink" title="2.4 新建文章"></a>2.4 新建文章</h3><blockquote>
 <p>hexo new post 文章名</p>
 </blockquote>
-<h2 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h2><h3 id="git准备"><a href="#git准备" class="headerlink" title="git准备"></a>git准备</h3><p>新建一个公开仓库，仓库名格式为 your_username.github.io 例如你的 GitHub<br>用户名是 easyhexo ，那么你的仓库地址名称就应该是 easyhexo.github.io</p>
-<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><blockquote>
+<h2 id="3-部署到github"><a href="#3-部署到github" class="headerlink" title="3 部署到github"></a>3 部署到github</h2><h3 id="3-1-git准备"><a href="#3-1-git准备" class="headerlink" title="3.1 git准备"></a>3.1 git准备</h3><p>新建一个公开仓库，仓库名格式为 your_username.github.io 例如你的 GitHub<br>用户名是 easyhexo ，那么你的仓库地址名称就应该是 easyhexo.github.io</p>
+<h3 id="3-2-安装插件"><a href="#3-2-安装插件" class="headerlink" title="3.2 安装插件"></a>3.2 安装插件</h3><blockquote>
 <p>npm install hexo-deployer-git –save<br>  npm install hexo-server –save</p>
 </blockquote>
-<h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><p>_config.yml 文件中修改</p>
+<h3 id="3-3-配置git"><a href="#3-3-配置git" class="headerlink" title="3.3 配置git"></a>3.3 配置git</h3><p>_config.yml 文件中修改</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span> <span class="comment"># 类型填git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment"># 你的Github仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span> <span class="comment"># 分支名称。默认填写 master 如果您使用的是 GitHub ，程序会尝试自动检测。</span></span><br><span class="line">  <span class="attr">message:</span> <span class="comment"># 提交信息可以自定义，不填的则默认为提交时间</span></span><br></pre></td></tr></table></figure>
-<h3 id="发布到git"><a href="#发布到git" class="headerlink" title="发布到git"></a>发布到git</h3><blockquote>
+<h3 id="3-4-发布到git"><a href="#3-4-发布到git" class="headerlink" title="3.4 发布到git"></a>3.4 发布到git</h3><blockquote>
 <p>$ hexo clean &amp;&amp; hexo d -g</p>
 </blockquote>
-<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><p>购买域名，新增解析</p>
-<h2 id="源码git托管"><a href="#源码git托管" class="headerlink" title="源码git托管"></a>源码git托管</h2><p>将源代码文件托管github</p>
+<h2 id="4-自定义域名"><a href="#4-自定义域名" class="headerlink" title="4 自定义域名"></a>4 自定义域名</h2><p>购买域名，新增解析</p>
+<h2 id="5-源码git托管"><a href="#5-源码git托管" class="headerlink" title="5 源码git托管"></a>5 源码git托管</h2><p>将源代码文件托管github</p>
 
         </div>
 
@@ -270,7 +269,7 @@
         
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85git"><span class="nav-number">1.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="nav-number">1.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">本地测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">3.</span> <span class="nav-text">部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E5%87%86%E5%A4%87"><span class="nav-number">3.1.</span> <span class="nav-text">git准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEgit"><span class="nav-number">3.3.</span> <span class="nav-text">配置git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E5%88%B0git"><span class="nav-number">3.4.</span> <span class="nav-text">发布到git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text">自定义域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81git%E6%89%98%E7%AE%A1"><span class="nav-number">5.</span> <span class="nav-text">源码git托管</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">1 环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%AE%89%E8%A3%85git"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%AE%89%E8%A3%85Node-js"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9C%AC%E5%9C%B0%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">2 本地测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%96%87%E4%BB%B6%E5%A4%B9hexo-blog%E5%B9%B6%E5%AE%89%E8%A3%85hexo"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 创建博客文件夹hexo-blog并安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 本地预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%AE%BF%E9%97%AE"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 新建文章</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">3.</span> <span class="nav-text">3 部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-git%E5%87%86%E5%A4%87"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 git准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E9%85%8D%E7%BD%AEgit"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 配置git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E5%8F%91%E5%B8%83%E5%88%B0git"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 发布到git</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D"><span class="nav-number">4.</span> <span class="nav-text">4 自定义域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%BA%90%E7%A0%81git%E6%89%98%E7%AE%A1"><span class="nav-number">5.</span> <span class="nav-text">5 源码git托管</span></a></li></ol>
     </div>
 </div>
         
