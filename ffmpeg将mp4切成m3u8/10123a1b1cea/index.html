@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ffmpeg将mp4切成m3u8 | BigCat's Blog</title><meta name="keywords" content="java"><meta name="author" content="BigCat"><meta name="copyright" content="BigCat"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="背景需要将mp4视频文件加密成m3u8文件给客户端，防止盗用 环境OpenSSL ffmepg 原理利用openSSL生成加密文件key，用ffmepg将mp4文件切割成m3u8文件（包含key信息）和多个ts视频文件 使用安装ffmepg 使用OpenSSL生成秘钥 openssl rand 16 &gt; [秘钥存放位置名称]    例：openssl rand 16 &gt; D:\vide">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ffmpeg将mp4切成m3u8">
+<meta property="og:url" content="http://blog.notjxh.top/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/index.html">
+<meta property="og:site_name" content="BigCat&#39;s Blog">
+<meta property="og:description" content="背景需要将mp4视频文件加密成m3u8文件给客户端，防止盗用 环境OpenSSL ffmepg 原理利用openSSL生成加密文件key，用ffmepg将mp4文件切割成m3u8文件（包含key信息）和多个ts视频文件 使用安装ffmepg 使用OpenSSL生成秘钥 openssl rand 16 &gt; [秘钥存放位置名称]    例：openssl rand 16 &gt; D:\vide">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.notjxh.top/img/test.jpg">
+<meta property="article:published_time" content="2022-07-27T02:19:45.000Z">
+<meta property="article:modified_time" content="2023-09-13T03:23:01.539Z">
+<meta property="article:author" content="BigCat">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.notjxh.top/img/test.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.notjxh.top/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ffmpeg将mp4切成m3u8',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-13 11:23:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/test.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">BigCat's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ffmpeg将mp4切成m3u8</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-27T02:19:45.000Z" title="发表于 2022-07-27 10:19:45">2022-07-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-13T03:23:01.539Z" title="更新于 2023-09-13 11:23:01">2023-09-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>需要将mp4视频文件加密成m3u8文件给客户端，防止盗用</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>OpenSSL</p>
+<p>ffmepg</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>利用openSSL生成加密文件key，用ffmepg将mp4文件切割成m3u8文件（包含key信息）和多个ts视频文件</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装ffmepg</p>
+<h3 id="使用OpenSSL生成秘钥"><a href="#使用OpenSSL生成秘钥" class="headerlink" title="使用OpenSSL生成秘钥"></a>使用OpenSSL生成秘钥</h3><blockquote>
+<p>openssl rand 16 &gt; [秘钥存放位置名称]</p>
+</blockquote>
+<blockquote>
+<p> 例：openssl rand 16 &gt; D:\video\encrypt.key</p>
+</blockquote>
+<h3 id="生成IV"><a href="#生成IV" class="headerlink" title="生成IV"></a>生成IV</h3><blockquote>
+<p>openssl rand -hex 16</p>
+</blockquote>
+<blockquote>
+<p>生成一串字符串：f169891eb22d3926af868e898ce64eaa</p>
+</blockquote>
+<h3 id="编写keyinfo文件"><a href="#编写keyinfo文件" class="headerlink" title="编写keyinfo文件"></a>编写keyinfo文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://XXX.cos.ap-shanghai.myqcloud.com/XXX.key</span><br><span class="line">D:\video\encrypt.key</span><br><span class="line">f169891eb22d3926af868e898ce64eaa</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>一共有三段信息</p>
+<p>第一段：解密文件路径，必须是URI，用来解密视频文件(放在了腾讯云上，写入到m3u8文件里)</p>
+<p>第二段：是加密文件路径（放在了本地，之后命令用到）</p>
+<p>第三段：之前生成的IV</p>
+</blockquote>
+<h3 id="用ffmpeg-将视频切片（不加密）"><a href="#用ffmpeg-将视频切片（不加密）" class="headerlink" title="用ffmpeg 将视频切片（不加密）"></a>用ffmpeg 将视频切片（不加密）</h3><blockquote>
+<p>ffmpeg -y -i d:\test.mp4 -c:v libx264 -hls_time 5 -hls_playlist_type vod -hls_segment_filename d:\video%06d.ts  d:\video\test.m3u8</p>
+</blockquote>
+<h3 id="用ffmpeg-将视频切片（加密）"><a href="#用ffmpeg-将视频切片（加密）" class="headerlink" title="用ffmpeg 将视频切片（加密）"></a>用ffmpeg 将视频切片（加密）</h3><blockquote>
+<p>ffmpeg -y -i d:\test.mp4 -c:v libx264 -hls_time 5 -hls_key_info_file D:\video2\encrypt.keyinfo  -hls_playlist_type vod -hls_segment_filename d:\video2%06d.ts  d:\video2\test.m3u8</p>
+</blockquote>
+<blockquote>
+<p>ffmpeg -y -i D:\openssl_key\test.mp4 -c:v libx264 -c:a copy -f hls -hls_time 180 -hls_list_size 0 -hls_key_info_file D:\openssl_key\enc.keyinfo -hls_playlist_type vod -hls_segment_filename D:\openssl_key\file%d.ts D:\openssl_key\playlist.m3u8</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>命令参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-y</td>
+<td>不经过确认，输出时直接覆盖同名文件。</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>指定编码器</td>
+</tr>
+<tr>
+<td>-c copy</td>
+<td>直接复制，不经过重新编码（这样比较快）</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>指定输入文件</td>
+</tr>
+<tr>
+<td>-title</td>
+<td>设置标题</td>
+</tr>
+<tr>
+<td>-author</td>
+<td>设置作者</td>
+</tr>
+<tr>
+<td>-copyright</td>
+<td>设置版权</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>强制设置输入输出的文件格式，默认情况下ffmpeg会根据文件后缀名判断文件格式</td>
+</tr>
+<tr>
+<td>-hls_key_info_file</td>
+<td>keyinfo文件路径</td>
+</tr>
+<tr>
+<td>-hls_time</td>
+<td>每段文件的时间长度(单位:秒)</td>
+</tr>
+<tr>
+<td>-hls_list_size 0</td>
+<td>索引播放列表的最大列数 默认5，0 为不限制</td>
+</tr>
+<tr>
+<td>-hls_playlist_type vod</td>
+<td>表示当前的视频流并不是一个直播流，而是点播流</td>
+</tr>
+<tr>
+<td>-hls_segment_filename</td>
+<td>输出 ts和m3u8 文件路径中间空格 ，例如：D:\openssl_key\ file%d.ts D:\openssl_key\playlist.m3u8</td>
+</tr>
+<tr>
+<td>%06d</td>
+<td>表示6位数字，从000000开始</td>
+</tr>
+</tbody></table>
+<h3 id="最终生成的文件"><a href="#最终生成的文件" class="headerlink" title="最终生成的文件"></a>最终生成的文件</h3><p><img src="/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/01.png" alt="01.png"></p>
+<p>m3u8文件：</p>
+<p><img src="/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/02.png" alt="02.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#EXTM3U                    M3U8文件头，必须放在第一行;</span><br><span class="line">#EXT-X-MEDIA-SEQUENCE      第一个TS分片的序列号，一般情况下是0，但是在直播场景下，这个序列号标识直播段的起始位置; #EXT-X-MEDIA-SEQUENCE:0</span><br><span class="line">#EXT-X-TARGETDURATION      每个分片TS的最大的时长;   </span><br><span class="line">#EXT-X-TARGETDURATION:10     每个分片的最大时长是 10s</span><br><span class="line">#EXT-X-ALLOW-CACHE         是否允许cache;          </span><br><span class="line">#EXT-X-ALLOW-CACHE:YES      </span><br><span class="line">#EXT-X-ALLOW-CACHE:NO    默认情况下是YES</span><br><span class="line">#EXT-X-ENDLIST             M3U8文件结束符；</span><br><span class="line">#EXTINF                    extra info，分片TS的信息，如时长，带宽等；一般情况下是    </span><br><span class="line">#EXTINF:&lt;duration&gt;,[&lt;title&gt;] 后面可以跟着其他的信息，逗号之前是当前分片的ts时长，分片时长 移动要小于 </span><br><span class="line">#EXT-X-TARGETDURATION 定义的值；</span><br><span class="line">#EXT-X-VERSION             M3U8版本号</span><br><span class="line">#EXT-X-DISCONTINUITY       该标签表明其前一个切片与下一个切片之间存在中断。下面会详解</span><br><span class="line">#EXT-X-PLAYLIST-TYPE       表明流媒体类型；</span><br><span class="line">#EXT-X-KEY                 是否加密解析，    </span><br><span class="line">#EXT-X-KEY:METHOD=AES-128,URI=&quot;https://priv.example.com/key.php?r=52&quot;    加密方式是AES-128,秘钥需要请求   https://priv.example.com/key.php?r=52  ，请求回来存储在本地；</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="播放"><a href="#播放" class="headerlink" title="播放"></a>播放</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;视频播放&lt;/title&gt;</span><br><span class="line">    &lt;link href=&quot;./videojs/video-js.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;video id=example-video width=800 height=600 class=&quot;video-js vjs-default-skin vjs-big-play-centered&quot; controls poster=&quot;D:test.jpg&quot;&gt;</span><br><span class="line">    &lt;source</span><br><span class="line">            src=&quot;./my/test.m3u8&quot;</span><br><span class="line">            type=&quot;application/x-mpegURL&quot;&gt;</span><br><span class="line">&lt;/video&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; onClick=&quot;switchvideo()&quot; value=&quot;switch&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;./videojs/video.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;./videojs/videojs-contrib-hls.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var player = videojs(&#x27;example-video&#x27;);</span><br><span class="line">    //player.play();</span><br><span class="line"></span><br><span class="line">    function switchvideo()&#123;</span><br><span class="line">        player.src(&#123;</span><br><span class="line">            src: &#x27;./my/test.m3u8&#x27;,</span><br><span class="line">            type: &#x27;application/x-mpegURL&#x27;,</span><br><span class="line">            withCredentials: true</span><br><span class="line">        &#125;);</span><br><span class="line">        player.play();</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>文件目录</p>
+<p><img src="/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/03.png" alt="03.png"></p>
+<p><a href="https://link.juejin.cn/?target=https://www.cnblogs.com/dshvv/p/12271280.html">windows 安装openssl</a></p>
+<p><a href="https://link.juejin.cn/?target=https://blog.csdn.net/qq_43803367/article/details/110308401">windows 安装 ffmpeg</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6959825909763276831">参考链接1</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Sunshine_Moon/article/details/102524173">参考链接2</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">BigCat</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.notjxh.top/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/">http://blog.notjxh.top/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.notjxh.top" target="_blank">BigCat's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/test.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechatpay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E6%95%B0%E5%AD%97%E8%AE%A1%E7%AE%97/13bbffe31802/"><img class="prev-cover" src="/img/test.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数据结构-常用算法</div></div></a></div><div class="next-post pull-right"><a href="/JVM/%E9%BB%91%E9%A9%ACJVM/a628bebc3894/"><img class="next-cover" src="/img/test.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JVM</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8OpenSSL%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-number">4.1.</span> <span class="toc-text">使用OpenSSL生成秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90IV"><span class="toc-number">4.2.</span> <span class="toc-text">生成IV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99keyinfo%E6%96%87%E4%BB%B6"><span class="toc-number">4.3.</span> <span class="toc-text">编写keyinfo文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8ffmpeg-%E5%B0%86%E8%A7%86%E9%A2%91%E5%88%87%E7%89%87%EF%BC%88%E4%B8%8D%E5%8A%A0%E5%AF%86%EF%BC%89"><span class="toc-number">4.4.</span> <span class="toc-text">用ffmpeg 将视频切片（不加密）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8ffmpeg-%E5%B0%86%E8%A7%86%E9%A2%91%E5%88%87%E7%89%87%EF%BC%88%E5%8A%A0%E5%AF%86%EF%BC%89"><span class="toc-number">4.5.</span> <span class="toc-text">用ffmpeg 将视频切片（加密）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-number">4.6.</span> <span class="toc-text">最终生成的文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%AD%E6%94%BE"><span class="toc-number">4.7.</span> <span class="toc-text">播放</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By BigCat</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="/css/custom.css"></div></body></html>

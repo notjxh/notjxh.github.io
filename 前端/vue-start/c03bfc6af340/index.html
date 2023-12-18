@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>vue-start | BigCat's Blog</title><meta name="keywords" content="vue"><meta name="author" content="BigCat"><meta name="copyright" content="BigCat"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章、Vue基础语法 学习前需要掌握html&#x2F;css&#x2F;javascript，包括es6语法  1. 第一个Vue实例在head中引入vue.js   1&lt;script src&#x3D;&quot;vue.js&quot;&gt;&lt;&#x2F;script&gt; 定义vue实例，el绑定挂载点，data定义数据，通过插值表达式&amp;#123;&amp;#123;..&amp;#125;&amp;#125;取值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-start">
+<meta property="og:url" content="http://blog.notjxh.top/%E5%89%8D%E7%AB%AF/vue-start/c03bfc6af340/index.html">
+<meta property="og:site_name" content="BigCat&#39;s Blog">
+<meta property="og:description" content="第一章、Vue基础语法 学习前需要掌握html&#x2F;css&#x2F;javascript，包括es6语法  1. 第一个Vue实例在head中引入vue.js   1&lt;script src&#x3D;&quot;vue.js&quot;&gt;&lt;&#x2F;script&gt; 定义vue实例，el绑定挂载点，data定义数据，通过插值表达式&amp;#123;&amp;#123;..&amp;#125;&amp;#125;取值">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.notjxh.top/img/test.jpg">
+<meta property="article:published_time" content="2023-09-15T02:38:49.000Z">
+<meta property="article:modified_time" content="2023-09-15T02:57:40.315Z">
+<meta property="article:author" content="BigCat">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.notjxh.top/img/test.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.notjxh.top/%E5%89%8D%E7%AB%AF/vue-start/c03bfc6af340/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vue-start',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-15 10:57:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/test.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">BigCat's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">vue-start</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-15T02:38:49.000Z" title="发表于 2023-09-15 10:38:49">2023-09-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-15T02:57:40.315Z" title="更新于 2023-09-15 10:57:40">2023-09-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="第一章、Vue基础语法"><a href="#第一章、Vue基础语法" class="headerlink" title="第一章、Vue基础语法"></a>第一章、Vue基础语法</h3><blockquote>
+<p>学习前需要掌握html&#x2F;css&#x2F;javascript，包括es6语法</p>
+</blockquote>
+<h4 id="1-第一个Vue实例"><a href="#1-第一个Vue实例" class="headerlink" title="1. 第一个Vue实例"></a>1. 第一个Vue实例</h4><p>在head中引入vue.js  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>定义vue实例，<code>el</code>绑定挂载点，<code>data</code>定义数据，通过插值表达式<code>&#123;&#123;..&#125;&#125;</code>取值  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1 id=&quot;root&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let app = new Vue(&#123;</span><br><span class="line">        el: &#x27;#root&#x27;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            message: &#x27;hello vue&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2-挂载点、模板、实例"><a href="#2-挂载点、模板、实例" class="headerlink" title="2. 挂载点、模板、实例"></a>2. 挂载点、模板、实例</h4><p>挂载点：<code>el</code>绑定的dom节点<br>模板：挂载点下的所有内容，也可以写在实例里的template里（这种情况下挂载点下其他节点无效）  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let app = new Vue(&#123;</span><br><span class="line">    el: &#x27;#root&#x27;,</span><br><span class="line">    template:&#x27;&lt;h1&gt;this is template &#123;&#123;message&#125;&#125;&lt;/h1&gt;&#x27;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: &#x27;hello vue&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>实例：new Vue()会结合模板和数据展示在挂载点上</p>
+<h4 id="3-vue实例中的数据、事件和方法"><a href="#3-vue实例中的数据、事件和方法" class="headerlink" title="3. vue实例中的数据、事件和方法"></a>3. vue实例中的数据、事件和方法</h4><p>数据：</p>
+<p>1）通过插值表达式<code>&#123;&#123;&#125;&#125;</code>获取数据<br>2）通过模板指令v-text&#x2F;v-html获取数据<br>3）v-html不会转义html标签  </p>
+<p>事件和方法：</p>
+<p>通过v-on:click&#x3D;”functionName”绑定事件<br>将方法写在vue实例的methods里<br>v-on:可以简写成@</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">&lt;!--    &lt;div v-text=&quot;content&quot;&gt;&lt;/div&gt;--&gt;</span><br><span class="line">    &lt;div v-on:click=&quot;handleClick&quot;&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let app = new Vue(&#123;</span><br><span class="line">        el: &#x27;#root&#x27;,</span><br><span class="line">        // template:&#x27;&lt;h1&gt;this is template &#123;&#123;message&#125;&#125;&lt;/h1&gt;&#x27;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            msg: &#x27;hello&#x27;,</span><br><span class="line">            content: &#x27;&lt;h1&gt;content&lt;/h1&gt;&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            handleClick:function () &#123;</span><br><span class="line">                this.msg=&#x27;world&#x27;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="4-vue里的属性绑定和双向数据绑定"><a href="#4-vue里的属性绑定和双向数据绑定" class="headerlink" title="4. vue里的属性绑定和双向数据绑定"></a>4. vue里的属性绑定和双向数据绑定</h4><p>v-bind:属性名&#x3D;数据名 绑定  可以简写为:属性名&#x3D;数据名<br>双向绑定：即改变当前绑定的属性时，绑定数据也会发生改变<br>v-model:属性名&#x3D;数据名（v-model&#x3D;数据名）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">    &lt;div v-bind:title=&#x27;title&#x27;&gt;数据绑定&lt;/div&gt;</span><br><span class="line">    &lt;div :title=&#x27;title&#x27;&gt;数据绑定简写&lt;/div&gt;</span><br><span class="line">    &lt;input v-model= &#x27;title&#x27;/&gt;</span><br><span class="line">    &lt;input v-model:value= &#x27;title&#x27;/&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;title&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-vue中的计算属性和侦听器"><a href="#5-vue中的计算属性和侦听器" class="headerlink" title="5. vue中的计算属性和侦听器"></a>5. vue中的计算属性和侦听器</h4><p>computed：定义一个计算属性<br>watch：对数据&#x2F;计算属性进行侦听，当发生改变时，做一些操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;vue中的计算属性和侦听器&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">名：&lt;input v-model=&quot;firstName&quot;&gt;</span><br><span class="line">姓：&lt;input v-model=&quot;lastName&quot;&gt;</span><br><span class="line">    全名：&lt;div&gt;&#123;&#123;fullName&#125;&#125;&lt;/div&gt;</span><br><span class="line">    count:&lt;div&gt;&#123;&#123;count&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&#x27;#root&#x27;,</span><br><span class="line">        data:&#123;</span><br><span class="line">            firstName:&#x27;&#x27;,</span><br><span class="line">            lastName:&#x27;&#x27;,</span><br><span class="line">            count:0</span><br><span class="line">        &#125;,</span><br><span class="line">        computed:&#123;</span><br><span class="line">            fullName:function () &#123;</span><br><span class="line">                return this.firstName+this.lastName;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        watch:&#123;</span><br><span class="line">            firstName:function()&#123;</span><br><span class="line">                this.count++</span><br><span class="line">            &#125;,</span><br><span class="line">            lastName:function()&#123;</span><br><span class="line">                this.count++</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="6-模板指令v-if、v-show、v-for"><a href="#6-模板指令v-if、v-show、v-for" class="headerlink" title="6. 模板指令v-if、v-show、v-for"></a>6. 模板指令v-if、v-show、v-for</h4><blockquote>
+<p>需求:通过toggle按钮实现div的显示隐藏</p>
+</blockquote>
+<p>通过v-if&#x3D;’true&#x2F;false’来控制时，会直接当前节点隐藏，<br>通过v-show&#x3D;’true&#x2F;false’，只是将display&#x3D;none  </p>
+<p>将list中的每一个元素item放在<code>&lt;li&gt;</code>标签中，增加:key&#x3D;’’能增加效率，但是key不能重复</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li v-for=&quot;(item,index) of list&quot; :key=&quot;index&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt; 模板指令v-if、v-show、v-for&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">    &lt;div v-show=&quot;show&quot;&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; @click=&quot;handleClick&quot; value=&quot;toggle&quot;/&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-for=&quot;(item,index) of list&quot; :key=&quot;index&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el: &#x27;#root&#x27;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            msg: &#x27;显示&#x27;,</span><br><span class="line">            show: true,</span><br><span class="line">            list: [4, 4, 5]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            handleClick: function () &#123;</span><br><span class="line">                this.show = !this.show;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="第二章、vue中的组件"><a href="#第二章、vue中的组件" class="headerlink" title="第二章、vue中的组件"></a>第二章、vue中的组件</h3><h4 id="7-实现一个简单的todo-list功能"><a href="#7-实现一个简单的todo-list功能" class="headerlink" title="7. 实现一个简单的todo-list功能"></a>7. 实现一个简单的todo-list功能</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;input v-model=&quot;inputValue&quot;/&gt;</span><br><span class="line">    &lt;button @click=&quot;handleSubmit&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li v-for=&quot;(item,index) of list&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        el:&#x27;#root&#x27;,</span><br><span class="line">        data:&#123;</span><br><span class="line">            inputValue:&#x27;&#x27;,</span><br><span class="line">            list:[1,2,3,4]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            handleSubmit:function () &#123;</span><br><span class="line">                this.list.push(this.inputValue);</span><br><span class="line">                this.inputValue=&#x27;&#x27;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="8-实现一个简单的todo-list-组件版"><a href="#8-实现一个简单的todo-list-组件版" class="headerlink" title="8. 实现一个简单的todo-list-组件版"></a>8. 实现一个简单的todo-list-组件版</h4><p>1）将list拆分成一个组件<br>方式一：定义一个局部组件，通过vue实例中的componens引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let todo_item=&#123;</span><br><span class="line">    template: &#x27;&lt;li&gt;item&lt;/li&gt;&#x27;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components:&#123;</span><br><span class="line">    todo_item:todo_item</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>方式二：通过Vue.componet定义一个全局组件,props用来接收外部组件的传参</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&#x27;todo_item&#x27;,&#123;</span><br><span class="line">    props:[&#x27;content&#x27;],</span><br><span class="line">    template:`&lt;li&gt;&#123;&#123;content&#125;&#125;&lt;/li&gt;`</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>2）在模板中引用组件，并且通过<strong>属性content传参</strong></p>
+<blockquote>
+<p>:content&#x3D;”item”  好像只能用:content传参？</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;root&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &lt;input v-model=&quot;inputValue&quot;/&gt;</span><br><span class="line">    &lt;button @click=&quot;handleSubmit&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;todo_item v-for=&quot;(item,index) of list&quot; :key=&quot;index&quot; :content=&quot;item&quot;&gt;&#123;&#123;index&#125;&#125;&lt;/todo_item&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>组件本身也是个Vue实例</li>
+</ol>
+<h4 id="9-实现todolist的删除功能-父子组件之间的事件交互"><a href="#9-实现todolist的删除功能-父子组件之间的事件交互" class="headerlink" title="9. 实现todolist的删除功能(父子组件之间的事件交互)"></a>9. 实现todolist的删除功能(父子组件之间的事件交互)</h4><blockquote>
+<p>需求：点击list中的值时将其删除；采用发布订阅模式</p>
+</blockquote>
+<p>1）在子组件中定义onclick事件：通过<code>this.$emit(事件名,参数);</code>告知父组件触发删除事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&#x27;todo_item&#x27;,&#123;</span><br><span class="line">    props:[&#x27;content&#x27;,&#x27;index&#x27;],</span><br><span class="line">    template:`&lt;li @click=&quot;handleClick&quot;&gt;&#123;&#123;content&#125;&#125;&lt;/li&gt;`,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        handleClick:function () &#123;</span><br><span class="line">            this.$emit(&#x27;delete&#x27;,this.index);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>2）父组件监听子组件的事件，接收一个参数index</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;todo_item v-for=&quot;(item,index) of list&quot;</span><br><span class="line">               :key=&quot;index&quot;</span><br><span class="line">               :content=&quot;item&quot;</span><br><span class="line">               :index=&quot;index&quot; </span><br><span class="line">               @delete=&quot;handleDelete&quot;&gt;&#123;&#123;index&#125;&#125;&lt;/todo_item&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handleDelete:function (index) &#123;</span><br><span class="line">    this.list.splice(index,1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三章、vue-cli的使用"><a href="#第三章、vue-cli的使用" class="headerlink" title="第三章、vue-cli的使用"></a>第三章、vue-cli的使用</h3><p>todo 需要时再看吧</p>
+<h4 id="10-vue-cli的简介与使用"><a href="#10-vue-cli的简介与使用" class="headerlink" title="10.vue-cli的简介与使用"></a>10.vue-cli的简介与使用</h4><blockquote>
+<p>vue-cli是vue用来搭建基于webpack的web项目的脚手架工具</p>
+</blockquote>
+<blockquote>
+<p>样式里的scoped表示是局部样式，只对当前组件有效</p>
+</blockquote>
+<h4 id="11-vue-cli改造todo-list项目"><a href="#11-vue-cli改造todo-list项目" class="headerlink" title="11.vue-cli改造todo-list项目"></a>11.vue-cli改造todo-list项目</h4></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">BigCat</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.notjxh.top/%E5%89%8D%E7%AB%AF/vue-start/c03bfc6af340/">http://blog.notjxh.top/%E5%89%8D%E7%AB%AF/vue-start/c03bfc6af340/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.notjxh.top" target="_blank">BigCat's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/vue/">vue</a></div><div class="post_share"><div class="social-share" data-image="/img/test.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechatpay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/%E6%A1%86%E6%9E%B6/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/9ee28aabda20/"><img class="prev-cover" src="/img/test.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">参数传递</div></div></a></div><div class="next-post pull-right"><a href="/%E5%89%8D%E7%AB%AF/%E8%BF%90%E8%A1%8Cvue%E9%A1%B9%E7%9B%AE/ff2bce2ad6b7/"><img class="next-cover" src="/img/test.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">运行vue项目</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/%E5%89%8D%E7%AB%AF/%E8%BF%90%E8%A1%8Cvue%E9%A1%B9%E7%9B%AE/ff2bce2ad6b7/" title="运行vue项目"><img class="cover" src="/img/test.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-14</div><div class="title">运行vue项目</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%81Vue%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">第一章、Vue基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%AC%AC%E4%B8%80%E4%B8%AAVue%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1. 第一个Vue实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8C%82%E8%BD%BD%E7%82%B9%E3%80%81%E6%A8%A1%E6%9D%BF%E3%80%81%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.</span> <span class="toc-text">2. 挂载点、模板、实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-vue%E5%AE%9E%E4%BE%8B%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%81%E4%BA%8B%E4%BB%B6%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">3. vue实例中的数据、事件和方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-vue%E9%87%8C%E7%9A%84%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-number">1.4.</span> <span class="toc-text">4. vue里的属性绑定和双向数据绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-vue%E4%B8%AD%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8C%E4%BE%A6%E5%90%AC%E5%99%A8"><span class="toc-number">1.5.</span> <span class="toc-text">5. vue中的计算属性和侦听器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4v-if%E3%80%81v-show%E3%80%81v-for"><span class="toc-number">1.6.</span> <span class="toc-text">6. 模板指令v-if、v-show、v-for</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%E3%80%81vue%E4%B8%AD%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">第二章、vue中的组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84todo-list%E5%8A%9F%E8%83%BD"><span class="toc-number">2.1.</span> <span class="toc-text">7. 实现一个简单的todo-list功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84todo-list-%E7%BB%84%E4%BB%B6%E7%89%88"><span class="toc-number">2.2.</span> <span class="toc-text">8. 实现一个简单的todo-list-组件版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-%E5%AE%9E%E7%8E%B0todolist%E7%9A%84%E5%88%A0%E9%99%A4%E5%8A%9F%E8%83%BD-%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%8B%E4%BB%B6%E4%BA%A4%E4%BA%92"><span class="toc-number">2.3.</span> <span class="toc-text">9. 实现todolist的删除功能(父子组件之间的事件交互)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%E3%80%81vue-cli%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">第三章、vue-cli的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10-vue-cli%E7%9A%84%E7%AE%80%E4%BB%8B%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-number">3.1.</span> <span class="toc-text">10.vue-cli的简介与使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-vue-cli%E6%94%B9%E9%80%A0todo-list%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.2.</span> <span class="toc-text">11.vue-cli改造todo-list项目</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By BigCat</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="/css/custom.css"></div></body></html>

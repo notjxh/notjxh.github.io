@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>BigCat's Blog</title><meta name="keywords" content="java"><meta name="author" content="BigCat"><meta name="copyright" content="BigCat"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="BigCat&#39;s Blog">
+<meta property="og:url" content="http://blog.notjxh.top/index.html">
+<meta property="og:site_name" content="BigCat&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.notjxh.top/img/avatar.png">
+<meta property="article:author" content="BigCat">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.notjxh.top/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://blog.notjxh.top/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'BigCat\'s Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-12-18 15:44:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/test.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">BigCat's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">BigCat's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/hexo%E4%BD%BF%E7%94%A8/insert/7d5f5ee697ea/" title="insert—picture"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="insert—picture"></a></div><div class="recent-post-info"><a class="article-title" href="/hexo%E4%BD%BF%E7%94%A8/insert/7d5f5ee697ea/" title="insert—picture">insert—picture</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-18T07:35:09.000Z" title="发表于 2023-12-18 15:35:09">2023-12-18</time></span></div><div class="content">
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/SpringBoot3/961a4fe4832d/" title="SpringBoot3"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot3"></a></div><div class="recent-post-info"><a class="article-title" href="/SpringBoot3/961a4fe4832d/" title="SpringBoot3">SpringBoot3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-21T09:18:19.000Z" title="发表于 2023-09-21 17:18:19">2023-09-21</time></span></div><div class="content">日志使用:门面+框架门面：
+JCL:Apache的Jakarta Commons Logging:最后更新于14年
+jboss-logging：只用在一些特定框架
+SLF4J(Simple Logging Facade for Java):选择
+框架：
+JUL：java.util.logging,Java自带的不推荐
+Log4j(过时)
+Logback：log4j作者的另一个日志框架，同时也是slf4j的作者
+Log4j2:Apache的项目，对log4j的升级，同时借鉴了logback的优点，虽然先进但未普及
+日志选择：slf4j+logbackSpringBoot中的日志框架：spring默认使用JCL
+SpringBoot选择的也是slf4j+logback
+slf4j和各类日志实现的使用
+
+slf4j和多个日志实现的使用
+
+排除掉其它日志
+
+引入中间包
+
+引入需要用的日志实现（中间包实际调用这个日志实现）
+
+
+比如：1.5.9版本的SpringBoot引用的Spring-core中排除了commons-logging
+12345678910&lt;dependency&gt;  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/%E6%A1%86%E6%9E%B6/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/9ee28aabda20/" title="参数传递"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="参数传递"></a></div><div class="recent-post-info"><a class="article-title" href="/%E6%A1%86%E6%9E%B6/%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/9ee28aabda20/" title="参数传递">参数传递</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-19T09:17:55.000Z" title="发表于 2023-09-19 17:17:55">2023-09-19</time></span></div><div class="content">解决跨域
+参考 https://spring.io/blog/2015/06/08/cors-support-in-spring-framework
+
+@CrossOrigin配置方法或者控制器123456789101112131415@CrossOrigin(origins = &quot;http://domain2.com&quot;, maxAge = 3600)@RestController@RequestMapping(&quot;/account&quot;)public class AccountController &#123;    //@CrossOrigin    @GetMapping(&quot;/&#123;id&#125;&quot;)    public Account retrieve(@PathVariable Long id) &#123;        // ...    &#125;    @DeleteMapping(&quot;/&#123;id&#125;&quot;)    public void remove(@PathVariab ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/%E5%89%8D%E7%AB%AF/vue-start/c03bfc6af340/" title="vue-start"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue-start"></a></div><div class="recent-post-info"><a class="article-title" href="/%E5%89%8D%E7%AB%AF/vue-start/c03bfc6af340/" title="vue-start">vue-start</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-15T02:38:49.000Z" title="发表于 2023-09-15 10:38:49">2023-09-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">第一章、Vue基础语法
+学习前需要掌握html&#x2F;css&#x2F;javascript，包括es6语法
+
+1. 第一个Vue实例在head中引入vue.js  
+1&lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;
+定义vue实例，el绑定挂载点，data定义数据，通过插值表达式&#123;&#123;..&#125;&#125;取值  
+12345678910111213&lt;body&gt;&lt;h1 id=&quot;root&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h1&gt;&lt;script&gt;    let app = new Vue(&#123;        el: &#x27;#root&#x27;,        data: &#123;            message: &#x27;hello vue&#x27;        &#125;    &#125;);&lt;/script&gt;&lt;/body&gt;
+2. 挂载点、 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/%E5%89%8D%E7%AB%AF/%E8%BF%90%E8%A1%8Cvue%E9%A1%B9%E7%9B%AE/ff2bce2ad6b7/" title="运行vue项目"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="运行vue项目"></a></div><div class="recent-post-info"><a class="article-title" href="/%E5%89%8D%E7%AB%AF/%E8%BF%90%E8%A1%8Cvue%E9%A1%B9%E7%9B%AE/ff2bce2ad6b7/" title="运行vue项目">运行vue项目</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-14T06:47:42.000Z" title="发表于 2023-09-14 14:47:42">2023-09-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">运行vue项目下载并安装node.js
+node -v 
+
+安装webpack
+npm install webpack -g
+
+安装vue-cli脚手架
+npm install vue-cli -g
+
+安装vue3需要用以下的命令
+
+npm uninstall -g vue-clinpm install -g @vue&#x2F;cli
+
+查看是否安装成功
+
+vue -V
+
+使用vue-cli创建项目
+vue create hello-world
+
+hello-world是vue项目名
+运行项目
+cd hello-world
+
+
+npm run serve
+
+localhost:8080出现页面表示成功
+运行别人的项目删除package-lock.json文件进入项目目录清除缓存
+npm cache clean -f
+
+重新安装依赖然后运行
+npm installnpm run serve
+
+管理多版本nodejs卸载node
+where node
+
+安装nvm
+nvm -v 查看版本
+
+修改镜像打开 nvm的安装目录，修改  settings.txt  文件添加
+
+node_mirr ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/be3625c9a7b3/" title="java中的数据结构"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java中的数据结构"></a></div><div class="recent-post-info"><a class="article-title" href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/be3625c9a7b3/" title="java中的数据结构">java中的数据结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-10T06:13:28.000Z" title="发表于 2023-07-10 14:13:28">2023-07-10</time></span></div><div class="content">Stack123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116package java.util;/** * The &lt;code&gt;Stack&lt;/code&gt; class represents a last-in-first-out * (LIFO) stack of objects. It extends class &lt;tt&gt;Vector&lt;/tt&gt; with five * operations that allow a vector to be treated as a stack. The usual * &lt;tt ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E4%B8%80/9e8c0e9bb054/" title="java核心技术一"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java核心技术一"></a></div><div class="recent-post-info"><a class="article-title" href="/java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E4%B8%80/9e8c0e9bb054/" title="java核心技术一">java核心技术一</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-09T02:27:31.000Z" title="发表于 2023-03-09 10:27:31">2023-03-09</time></span></div><div class="content">第4章 对象与类4.1 面向对象概述面向对象程序设计（简称OOP）是当今主流的程序设计范型，它已经取代了20世纪70年代的“结构化”过程化程序设计开发技术。
+4.1.1 类类（class）是构造对象的模板或蓝图。我们可以将类想象成制作小甜饼的切割机，将对象想象为小甜饼。由类构造（construct）对象的过程称为创建类的实例（instance）。
+类（class）是构造对象的模板或蓝图。我们可以将类想象成制作小甜饼的切割机，将对象想象为小甜饼。由类构造（construct）对象的过程称为创建类的实例（instance）。
+对象中的数据称为实例域（instance field），操纵数据的过程称为方法（method）。对于每个特定的类实例（对象）都有一组特定的实例域值。这些值的集合就是这个对象的当前状态（state）。
+通过扩展一个类来建立另外一个类的过程称为继承（inheritance）。
+4.1.2 对象
+对象的行为（behavior）——可以对对象施加哪些操作，或可以对对象施加哪些方法？
+对象的状态（state）——当施加那些方法时，对象如何响应？
+对象标识（identity）—— ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E6%95%B0%E5%AD%97%E8%AE%A1%E7%AE%97/13bbffe31802/" title="数据结构-常用算法"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构-常用算法"></a></div><div class="recent-post-info"><a class="article-title" href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E6%95%B0%E5%AD%97%E8%AE%A1%E7%AE%97/13bbffe31802/" title="数据结构-常用算法">数据结构-常用算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-24T03:13:34.000Z" title="发表于 2022-08-24 11:13:34">2022-08-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="content">位运算概述程序中的数都是以二进制的方式存储的。位运算就是对整数的二进制位直接运算。
+二进制表示和转换十进制转换成二进制
+除二取余，倒序排列，高位补零
+
+
+即：十进制数除以二，得到的商再除以二，依次类推直到商为零时为止，然后在旁边标出各步的余数，最后倒着写出来，再根据实际高位补零
+
+如将125转换成二进制1111101
+1234567891011/*  以下是计算过程 商/2  --------- 余数  */125/2 --------- 162/2  --------- 031/2  --------- 115/2  --------- 17/2   --------- 13/2   --------- 11/2   --------- 1 0
+
+余数倒置则是1111101，然后我们发现结果只有7位数，而二进制最低位是8位，所以进行高位补零之后得到他的最终结果01111101
+https://www.cnblogs.com/zzerx/p/15042367.html
+https://zhuanlan.zhihu.com/p/102277869
+二进制转换成十进制</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/" title="ffmpeg将mp4切成m3u8"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ffmpeg将mp4切成m3u8"></a></div><div class="recent-post-info"><a class="article-title" href="/ffmpeg%E5%B0%86mp4%E5%88%87%E6%88%90m3u8/10123a1b1cea/" title="ffmpeg将mp4切成m3u8">ffmpeg将mp4切成m3u8</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-27T02:19:45.000Z" title="发表于 2022-07-27 10:19:45">2022-07-27</time></span></div><div class="content">背景需要将mp4视频文件加密成m3u8文件给客户端，防止盗用
+环境OpenSSL
+ffmepg
+原理利用openSSL生成加密文件key，用ffmepg将mp4文件切割成m3u8文件（包含key信息）和多个ts视频文件
+使用安装ffmepg
+使用OpenSSL生成秘钥
+openssl rand 16 &gt; [秘钥存放位置名称]
+
+
+ 例：openssl rand 16 &gt; D:\video\encrypt.key
+
+生成IV
+openssl rand -hex 16
+
+
+生成一串字符串：f169891eb22d3926af868e898ce64eaa
+
+编写keyinfo文件123https://XXX.cos.ap-shanghai.myqcloud.com/XXX.keyD:\video\encrypt.keyf169891eb22d3926af868e898ce64eaa
+
+
+一共有三段信息
+第一段：解密文件路径，必须是URI，用来解密视频文件(放在了腾讯云上，写入到m3u8文件里)
+第二段：是加密文件路径（放在了本地，之后命令用到）
+第三段：之前生成的IV
+
+用ffm ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/JVM/%E9%BB%91%E9%A9%ACJVM/a628bebc3894/" title="JVM"><img class="post_bg" src="/img/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JVM"></a></div><div class="recent-post-info"><a class="article-title" href="/JVM/%E9%BB%91%E9%A9%ACJVM/a628bebc3894/" title="JVM">JVM</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-16T01:18:43.000Z" title="发表于 2022-06-16 09:18:43">2022-06-16</time></span></div><div class="content">什么是JVM定义：Java Virtual Machine：java字节码的运行环境
+好处：
+
+一次编写，到处运行
+自动内存管理，垃圾回收功能
+数组下标越界检查？
+多态？
+
+比较：JVM、JRE、JDK
+
+学习路线
+jvm内存结构
+gc垃圾回收
+字节码文件
+类加载器
+执行引擎
+内存结构程序计数器定义Program Counter Register程序计数器（寄存器）
+作用java源代码-编译成二进制字节码（jvm指令，每个系统都一样）-交给解释器-翻译成机器码-交给cpu执行
+程序计数器：就是来记住下一条jvm指令的执行地址
+特点线程私有的:每个线程都有自己的自己的程序计数器
+PCR是jvm中唯一不存在内存溢出的(jvm规范规定)
+虚拟机栈定义JVM Stacks :java 虚拟机栈
+
+每个线程 运行时需要的内存，称为虚拟机栈
+
+每个栈由多个栈帧（Frame)组成，对应着每次方法调用时所占用的内存（参数、局部变量、返回地址）
+
+每个线程只能有一个活动栈帧，对应着当前正在执行的的那个方法
+
+
+代码演示idea中的frams内看到当前线程中的栈，其中最上面的就是活动栈帧
+
+本地方法栈带有 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">BigCat</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Leetcode/"><span class="card-category-list-name">Leetcode</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SpringBoot/"><span class="card-category-list-name">SpringBoot</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">开发工具</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="card-category-list-name">设计模式</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Hexo/" style="font-size: 1.5em; color: #99a9bf">Hexo</a> <a href="/tags/Leetcode-%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 1.1em; color: #999">Leetcode-位运算</a> <a href="/tags/Leetcode-%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 1.1em; color: #999">Leetcode-字符串</a> <a href="/tags/Leetcode-%E6%95%B0%E7%BB%84/" style="font-size: 1.1em; color: #999">Leetcode-数组</a> <a href="/tags/Leetcode-%E9%93%BE%E8%A1%A8/" style="font-size: 1.1em; color: #999">Leetcode-链表</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/linux%E5%91%BD%E4%BB%A4-%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" style="font-size: 1.1em; color: #999">linux命令 开发工具</a> <a href="/tags/maven/" style="font-size: 1.1em; color: #999">maven</a> <a href="/tags/vue/" style="font-size: 1.3em; color: #99a1ac">vue</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E6%95%B0%E5%AD%97%E8%AE%A1%E7%AE%97/" style="font-size: 1.1em; color: #999">数据结构-二进制和数字计算</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95/" style="font-size: 1.1em; color: #999">数据结构-常用算法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" style="font-size: 1.1em; color: #999">数据结构-排序算法</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构-线性结构</a> <a href="/tags/%E6%A1%86%E6%9E%B6-SpringBoot/" style="font-size: 1.1em; color: #999">框架 SpringBoot</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.1em; color: #999">设计模式</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">7</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">25</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-12-31T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">55k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-12-18T07:44:55.761Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By BigCat</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    window.typed = new Typed("#subtitle", {
+      strings: ["迷途漫漫，终有一归","桃李不言，下自成蹊"],
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '迷途漫漫，终有一归'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><link rel="stylesheet" href="/css/custom.css"></div></body></html>
